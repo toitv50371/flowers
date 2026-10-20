@@ -30,13 +30,15 @@
   let albumRevealPromise;
   function revealAlbum() {
     if (albumRevealPromise) return albumRevealPromise;
-    // Decode the local mockup photos before revealing the paper frames.
+    // Restore saved photos and decode them before revealing the paper frames.
     const photos = [...album.querySelectorAll('img')];
     photos.forEach(photo => { photo.loading = 'eager'; });
-    albumRevealPromise = Promise.allSettled(photos.map(photo => photo.decode())).then(() => {
-      album.hidden = false;
-      albumObserver.observe(album);
-    });
+    albumRevealPromise = Promise.resolve(window.albumPhotosReady)
+      .then(() => Promise.allSettled(photos.map(photo => photo.decode())))
+      .then(() => {
+        album.hidden = false;
+        albumObserver.observe(album);
+      });
     return albumRevealPromise;
   }
 

@@ -42,15 +42,17 @@ Mở `garden.html` trực tiếp trong trình duyệt, chọn **Ngắm vườn h
 - Chọn **Xem album kỷ niệm** trong thiệp để chuyển đến album.
 - Ban đầu ảnh xếp chồng như ảnh giấy. **Xòe album** trải ba ảnh ra ngang trên máy tính, dọc trên điện thoại; **Gấp album** xếp lại.
 - Album vẫn giữ lại khi đóng thiệp, để người xem có thể ngắm ảnh tiếp.
+- Chọn **Thay ảnh** để xòe album và hiện nút **Đổi ảnh** cho từng khung. Chọn ảnh trên thiết bị (tối đa 20 MB); ảnh được thu nhỏ và lưu trên trình duyệt hiện tại. Chọn **Ảnh ban đầu** để khôi phục từng khung, hoặc **Xong** để ẩn các nút chỉnh sửa.
+- Ảnh đã chọn chỉ có trên trình duyệt này, không tự chia sẻ sang thiết bị khác hoặc thay đổi tệp ảnh trong mã nguồn.
 
 
-Album là mockup gồm ba ô ảnh, hiện cùng dùng một ảnh mẫu. Có thể thay từng ô bằng ảnh mẹ, người yêu hoặc những kỷ niệm riêng.
+Album gồm ba ô ảnh, mặc định dùng cùng một ảnh mẫu. Ngoài cách thay trực tiếp trên trang, có thể sửa ảnh mặc định trong mã nguồn để người khác mở trang cũng thấy ảnh của bạn:
 
 1. Chép ảnh của bạn vào thư mục `assets`, ví dụ `assets/me.jpg`.
 2. Trong phần `memoryAlbum` ở `index.html`, đổi `src="./assets/portrait-placeholder.webp"` của từng ô ảnh thành đường dẫn tương ứng, ví dụ `src="./assets/me.jpg"`.
 3. Sửa `alt` và hai dòng chữ trong `figcaption` nếu muốn cá nhân hóa phần ảnh.
 
-Khung ảnh dùng tỉ lệ 3:4 và tự cắt ảnh vừa khung. Có thể chỉnh `object-position` trong `.portrait-photo img` ở `style.css` để giữ khuôn mặt đúng vị trí. Đây là phần trình bày bằng HTML, không có chức năng tải ảnh lên.
+Khung ảnh dùng tỉ lệ 3:4 và tự cắt ảnh vừa khung. Có thể chỉnh `object-position` trong `.portrait-photo img` ở `style.css` để giữ khuôn mặt đúng vị trí.
 
 Ảnh mẫu `assets/portrait-placeholder.webp` (768 × 1024) được tạo bằng công cụ imagegen tích hợp; prompt cuối nằm trong `assets/portrait-prompt.txt`.
 
@@ -60,8 +62,10 @@ Khung ảnh dùng tỉ lệ 3:4 và tự cắt ảnh vừa khung. Có thể ch�
 - `style.css`: nền hồng, phong bì, giấy gấp, bố cục responsive và chuyển động.
 - `script.js`: vẽ bó hoa, hiệu ứng nở hoa, parallax, cánh hoa bay và tương tác từng bông.
 - `card.js`: mở/đóng thiệp, chuyển bố cục, lời chúc và lưu nội dung cá nhân hóa.
+- `album.js`: thay, thu nhỏ, lưu ảnh album trên trình duyệt và khôi phục ảnh ban đầu.
 - `assets/portrait-placeholder.webp`: ảnh mẫu có thể thay thế.
 - `tests/layout.cjs`: kiểm tra hồi quy bố cục trên 11 kích thước màn hình, hoa căn giữa, album ẩn/hiện và xòe/gấp, thiệp dài và các tương tác. Chạy `node tests/layout.cjs` trong môi trường có Playwright (hoặc đặt `NODE_PATH` đến thư mục chứa Playwright đã cài).
+- `tests/album.cjs`: kiểm tra chọn ảnh, thu nhỏ, lưu và khôi phục riêng từng ảnh, tải lại trang, tệp không hợp lệ, bộ nhớ không khả dụng và bố cục chỉnh ảnh trên điện thoại. Chạy `node tests/album.cjs` với Playwright.
 
 Đổi nội dung thiệp mặc định tại `defaultGreeting` trong `card.js`; đổi các lời chúc theo bông hoa tại `WHISPER_NOTES` trong `script.js`. Nội dung được render dưới dạng văn bản thuần.
 

@@ -25,7 +25,8 @@
     .music-toggle {
       position: fixed; z-index: 20;
       left: max(16px, env(safe-area-inset-left)); bottom: max(16px, env(safe-area-inset-bottom));
-      width: 44px; height: 44px; display: grid; place-items: center;
+      width: 44px; height: 44px; margin: 0; padding: 0;
+      -webkit-appearance: none; appearance: none;
       border: 1px solid #e8d5dc; border-radius: 50%;
       background: #fffdfdcc; color: #b4577c; font-size: 18px; line-height: 1;
       cursor: pointer; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
@@ -33,7 +34,8 @@
     }
     .music-toggle:hover { background: #fae7ef; }
     .music-toggle:focus-visible { outline: 2px solid #b4577c; outline-offset: 3px; }
-    .music-toggle svg { width: 22px; height: 22px; }
+    /* Căn giữa tuyệt đối: Safari tự thêm padding cho button nên không dựa vào grid/flex. */
+    .music-toggle svg { position: absolute; inset: 0; margin: auto; display: block; width: 22px; height: 22px; }
     .music-toggle .icon-off { display: none; }
     .music-toggle:not(.is-playing) .icon-on { display: none; }
     .music-toggle:not(.is-playing) .icon-off { display: block; opacity: .7; }

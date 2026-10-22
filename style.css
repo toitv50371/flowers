@@ -183,6 +183,7 @@ h1 { margin: 0; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.08; letter-s
 .album-card:nth-child(1) { z-index: 3; transform: rotate(-3deg); }
 .album-card:nth-child(2) { z-index: 2; transform: translate(12px, -6px) rotate(7deg); }
 .album-card:nth-child(3) { z-index: 1; transform: translate(-12px, -10px) rotate(-9deg); }
+.album-card:nth-child(n+4) { z-index: 0; transform: rotate(4deg); }
 .album-card .portrait-dedication { font-size: 17px; }
 .album-card figcaption { padding: 16px 4px 18px; }
 .album-card .portrait-date { margin-top: 8px; }
@@ -197,6 +198,9 @@ h1 { margin: 0; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.08; letter-s
 .memory-album.is-spread .album-card:nth-child(1) { --photo-angle: -4deg; }
 .memory-album.is-spread .album-card:nth-child(2) { --photo-angle: 2deg; animation-delay: .13s; }
 .memory-album.is-spread .album-card:nth-child(3) { --photo-angle: -2deg; animation-delay: .26s; }
+.memory-album.is-spread .album-card:nth-child(4) { --photo-angle: 3deg; animation-delay: .39s; }
+.memory-album.is-spread .album-card:nth-child(5) { --photo-angle: -3deg; animation-delay: .52s; }
+.memory-album.is-spread .album-card:nth-child(6) { --photo-angle: 2deg; animation-delay: .65s; }
 .album-footnote { margin: 22px 0 0; color: var(--muted); font: italic 15px/1.7 Georgia, serif; }
 @keyframes photo-unfold {
   from { opacity: 0; transform: translateY(22px) rotate(0); }

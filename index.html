@@ -7,7 +7,7 @@
   <meta name="description" content="Một bó hoa và tấm thiệp nhỏ, gửi những lời chúc dịu dàng.">
   <title>Một bó hoa dành tặng bé mèo</title>
   <link rel="stylesheet" href="./style.css">
-  <script src="./script.js" defer></script>
+  <script src="./script.js?v=2" defer></script>
   <script src="./card.js" defer></script>
   <script src="./album.js" defer></script>
   <script src="./music.js?v=3" defer></script>
@@ -93,7 +93,7 @@
       <p id="albumStatus" class="album-status" role="status" aria-live="polite" aria-atomic="true"></p>
       <div id="albumPhotos" class="album-photos">
         <figure class="portrait-card album-card">
-          <div class="portrait-photo"><img src="./assets/portrait-placeholder.webp" alt="Ảnh kỷ niệm thứ nhất của người nhận thiệp" width="768" height="1024" decoding="async"></div>
+          <div class="portrait-photo"><img src="./assets/images/album/2.jpg" alt="Ảnh kỷ niệm thứ nhất của bé mèo" width="720" height="1280" decoding="async"></div>
           <figcaption><span class="portrait-dedication">Một nụ cười rất thương.</span><span class="portrait-date">Những ngày thật vui</span></figcaption>
           <div class="photo-actions" hidden>
             <button class="text-button change-photo" type="button" aria-label="Đổi ảnh thứ nhất">Đổi ảnh</button>
@@ -102,7 +102,7 @@
           </div>
         </figure>
         <figure class="portrait-card album-card">
-          <div class="portrait-photo"><img src="./assets/portrait-placeholder.webp" alt="Ảnh kỷ niệm thứ hai của người nhận thiệp" width="768" height="1024" decoding="async" loading="lazy"></div>
+          <div class="portrait-photo"><img src="./assets/images/album/1.jpg" alt="Ảnh kỷ niệm thứ hai của bé mèo" width="720" height="1280" decoding="async" loading="lazy"></div>
           <figcaption><span class="portrait-dedication">Bình yên từ điều nhỏ.</span><span class="portrait-date">Một khoảnh khắc dịu dàng</span></figcaption>
           <div class="photo-actions" hidden>
             <button class="text-button change-photo" type="button" aria-label="Đổi ảnh thứ hai">Đổi ảnh</button>
@@ -111,12 +111,39 @@
           </div>
         </figure>
         <figure class="portrait-card album-card">
-          <div class="portrait-photo"><img src="./assets/portrait-placeholder.webp" alt="Ảnh kỷ niệm thứ ba của người nhận thiệp" width="768" height="1024" decoding="async" loading="lazy"></div>
-          <figcaption><span class="portrait-dedication">Mong bé mèo luôn rạng rỡ.</span><span class="portrait-date">Hôm nay và cả mai sau</span></figcaption>
+          <div class="portrait-photo"><img src="./assets/images/album/3.jpg" alt="Ảnh kỷ niệm thứ ba của bé mèo" width="720" height="960" decoding="async" loading="lazy"></div>
+          <figcaption><span class="portrait-dedication">Bé mèo của anh.</span><span class="portrait-date">Đáng yêu mỗi ngày</span></figcaption>
           <div class="photo-actions" hidden>
             <button class="text-button change-photo" type="button" aria-label="Đổi ảnh thứ ba">Đổi ảnh</button>
             <button class="text-button reset-photo" type="button" aria-label="Khôi phục ảnh thứ ba" disabled>Ảnh ban đầu</button>
             <input class="photo-input" type="file" accept="image/*" aria-label="Chọn ảnh thứ ba" hidden>
+          </div>
+        </figure>
+        <figure class="portrait-card album-card">
+          <div class="portrait-photo"><img src="./assets/images/album/4.jpg" alt="Ảnh kỷ niệm thứ tư của bé mèo" width="720" height="960" decoding="async" loading="lazy"></div>
+          <figcaption><span class="portrait-dedication">Mong bé mèo luôn rạng rỡ.</span><span class="portrait-date">Hôm nay và cả mai sau</span></figcaption>
+          <div class="photo-actions" hidden>
+            <button class="text-button change-photo" type="button" aria-label="Đổi ảnh thứ tư">Đổi ảnh</button>
+            <button class="text-button reset-photo" type="button" aria-label="Khôi phục ảnh thứ tư" disabled>Ảnh ban đầu</button>
+            <input class="photo-input" type="file" accept="image/*" aria-label="Chọn ảnh thứ tư" hidden>
+          </div>
+        </figure>
+        <figure class="portrait-card album-card">
+          <div class="portrait-photo"><img src="./assets/images/album/5.jpg" alt="Ảnh kỷ niệm thứ năm của bé mèo" width="720" height="960" decoding="async" loading="lazy"></div>
+          <figcaption><span class="portrait-dedication">Thương em nhiều lắm.</span><span class="portrait-date">Từng chút một</span></figcaption>
+          <div class="photo-actions" hidden>
+            <button class="text-button change-photo" type="button" aria-label="Đổi ảnh thứ năm">Đổi ảnh</button>
+            <button class="text-button reset-photo" type="button" aria-label="Khôi phục ảnh thứ năm" disabled>Ảnh ban đầu</button>
+            <input class="photo-input" type="file" accept="image/*" aria-label="Chọn ảnh thứ năm" hidden>
+          </div>
+        </figure>
+        <figure class="portrait-card album-card">
+          <div class="portrait-photo"><img src="./assets/images/album/6.jpg" alt="Ảnh kỷ niệm thứ sáu của bé mèo" width="720" height="960" decoding="async" loading="lazy"></div>
+          <figcaption><span class="portrait-dedication">Ở cạnh em là đủ.</span><span class="portrait-date">Những ngày có nhau</span></figcaption>
+          <div class="photo-actions" hidden>
+            <button class="text-button change-photo" type="button" aria-label="Đổi ảnh thứ sáu">Đổi ảnh</button>
+            <button class="text-button reset-photo" type="button" aria-label="Khôi phục ảnh thứ sáu" disabled>Ảnh ban đầu</button>
+            <input class="photo-input" type="file" accept="image/*" aria-label="Chọn ảnh thứ sáu" hidden>
           </div>
         </figure>
       </div>

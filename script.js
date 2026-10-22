@@ -1056,6 +1056,8 @@ let winH = window.innerHeight;
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 let reducedMotion = motionPreference.matches;
 let sceneAnimationFrame = null;
+// Bó hoa chỉ vẽ lại khi đang nằm trong màn hình; cánh hoa rơi vẫn tiếp tục.
+let bouquetVisible = true;
 let keyboardRoseIndex = 0;
 const bloomTimers = new Set();
 
@@ -1165,7 +1167,9 @@ function triggerBouquetBloomWave(originX = 0, originY = -30, mode = 'grand') {
 }
 
 function resizeCanvases() {
-  const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+  // Giới hạn độ phân giải để màn hình mật độ cao không phải vẽ lại quá nhiều điểm ảnh mỗi khung hình.
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const ambientDpr = Math.min(window.devicePixelRatio || 1, 1.25);
   // Layout dimensions stay stable while the entrance animation scales the wrapper.
   stageW = bouquetWrapper.clientWidth || 560;
   stageH = bouquetWrapper.clientHeight || 560;
@@ -1174,9 +1178,9 @@ function resizeCanvases() {
   bCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
   winW = window.innerWidth;
   winH = window.innerHeight;
-  ambientCanvas.width = Math.round(winW * dpr);
-  ambientCanvas.height = Math.round(winH * dpr);
-  aCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ambientCanvas.width = Math.round(winW * ambientDpr);
+  ambientCanvas.height = Math.round(winH * ambientDpr);
+  aCtx.setTransform(ambientDpr, 0, 0, ambientDpr, 0, 0);
   requestSceneRender();
 }
 const fallingPetals = [];
@@ -1305,8 +1309,14 @@ function renderAmbientPetals(time) {
     aCtx.save();
     aCtx.globalAlpha = s.alpha;
     aCtx.fillStyle = s.color;
-    aCtx.shadowColor = '#F48FB1';
-    aCtx.shadowBlur = 8;
+    // Quầng sáng vẽ bằng một vòng mờ thay cho shadowBlur, rẻ hơn nhiều khi có nhiều đốm sáng.
+    aCtx.beginPath();
+    aCtx.arc(s.x, s.y, s.r * 2.4, 0, Math.PI * 2);
+    aCtx.globalAlpha = s.alpha * 0.22;
+    aCtx.fillStyle = '#F48FB1';
+    aCtx.fill();
+    aCtx.globalAlpha = s.alpha;
+    aCtx.fillStyle = s.color;
     aCtx.beginPath();
     aCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
     aCtx.fill();
@@ -1318,6 +1328,11 @@ function renderBouquetScene(timestamp) {
   sceneAnimationFrame = null;
   if (document.hidden) return;
   const time = reducedMotion ? 0 : timestamp * 0.001;
+  if (!bouquetVisible) {
+    renderAmbientPetals(time);
+    if (!reducedMotion) requestSceneRender();
+    return;
+  }
   bCtx.clearRect(0, 0, stageW, stageH);
 
   // Smoothly interpolate parallax
@@ -1610,6 +1625,10 @@ window.addEventListener('load', () => {
   // Show the invitation only after the initial flower wave has settled.
   setTimeout(() => document.dispatchEvent(new Event('bouquet:ready')), reducedMotion ? 0 : 1900);
   new ResizeObserver(resizeCanvases).observe(bouquetWrapper);
+  new IntersectionObserver(([entry]) => {
+    bouquetVisible = entry.isIntersecting;
+    requestSceneRender();
+  }).observe(bouquetWrapper);
   window.addEventListener('resize', resizeCanvases);
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {

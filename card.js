@@ -4,7 +4,7 @@
   const STORAGE_KEY = 'flower.greeting.20-10.v1';
   const defaultGreeting = {
     recipient: 'bạn',
-    message: 'Nhân ngày Phụ nữ Việt Nam 20/10, chúc bạn luôn khỏe mạnh, bình an và có thật nhiều niềm vui.\n\nMong bạn được yêu thương từ những điều nhỏ nhất, có thời gian cho bản thân và tự tin theo đuổi những điều mình mong muốn.\n\nHôm nay và cả những ngày sau, hãy luôn mỉm cười theo cách của riêng bạn nhé.',
+    message: 'Chúc bạn luôn khỏe mạnh, bình an và có thật nhiều niềm vui.\n\nMong bạn được yêu thương từ những điều nhỏ nhất, có thời gian cho bản thân và tự tin theo đuổi những điều mình mong muốn.\n\nHôm nay và cả những ngày sau, hãy luôn mỉm cười theo cách của riêng bạn nhé.',
     sender: 'Một người quý mến bạn'
   };
   const dialog = document.getElementById('greetingCard');
@@ -130,15 +130,16 @@
   };
   let greeting = { ...defaultGreeting };
 
-  try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if (saved && Object.keys(inputs).every(key => typeof saved[key] === 'string'
-      && saved[key].trim().length > 0 && saved[key].length <= inputs[key].maxLength)) {
-      greeting = Object.fromEntries(Object.keys(inputs).map(key => [key, saved[key].trim()]));
-    }
-  } catch {
-    // The default letter stays usable when storage is unavailable or malformed.
-  }
+  // Tạm tắt lời chúc tùy chỉnh đã lưu.
+  // try {
+  //   const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  //   if (saved && Object.keys(inputs).every(key => typeof saved[key] === 'string'
+  //     && saved[key].trim().length > 0 && saved[key].length <= inputs[key].maxLength)) {
+  //     greeting = Object.fromEntries(Object.keys(inputs).map(key => [key, saved[key].trim()]));
+  //   }
+  // } catch {
+  //   // The default letter stays usable when storage is unavailable or malformed.
+  // }
 
   function renderGreeting() {
     document.getElementById('cardRecipient').textContent = greeting.recipient;
@@ -189,7 +190,7 @@
     showReading();
   });
 
-  editButton.addEventListener('click', () => {
+  editButton?.addEventListener('click', () => {
     Object.keys(inputs).forEach(key => {
       inputs[key].value = greeting[key];
       inputs[key].setCustomValidity('');

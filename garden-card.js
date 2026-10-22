@@ -41,16 +41,17 @@
     }));
   }
 
-  try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if (saved && Object.entries(inputs).every(([key, input]) =>
-      typeof saved[key] === 'string' && saved[key].trim() && saved[key].length <= input.maxLength)) {
-      greeting = Object.fromEntries(Object.keys(inputs).map(key => [key, saved[key].trim()]));
-      renderGreeting();
-    }
-  } catch {
-    // Keep the original letter when storage is unavailable or malformed.
-  }
+  // Tạm tắt lời chúc tùy chỉnh đã lưu.
+  // try {
+  //   const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  //   if (saved && Object.entries(inputs).every(([key, input]) =>
+  //     typeof saved[key] === 'string' && saved[key].trim() && saved[key].length <= input.maxLength)) {
+  //     greeting = Object.fromEntries(Object.keys(inputs).map(key => [key, saved[key].trim()]));
+  //     renderGreeting();
+  //   }
+  // } catch {
+  //   // Keep the original letter when storage is unavailable or malformed.
+  // }
 
   function showReading() {
     editor.hidden = true;
@@ -59,7 +60,7 @@
     card.scrollTop = 0;
   }
 
-  editButton.addEventListener('click', () => {
+  editButton?.addEventListener('click', () => {
     Object.entries(inputs).forEach(([key, input]) => {
       input.value = greeting[key];
       input.setCustomValidity('');

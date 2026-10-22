@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#bbdff5">
-  <meta name="description" content="Chạm một bông hoa, đánh thức cả khu vườn và nhận một lời chúc dịu dàng ngày 20/10.">
-  <title>Cả một vườn thương · 20/10</title>
+  <meta name="description" content="Chạm một bông hoa, đánh thức cả khu vườn và nhận một lời chúc dịu dàng.">
+  <title>Cả một vườn thương</title>
   <link rel="preload" href="./assets/fonts/noto-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./assets/fonts/noto-sans-regular.woff2" as="font" type="font/woff2" crossorigin>
   <style>
@@ -160,7 +160,6 @@
   <main class="garden" id="garden">
     <header class="page-header">
       <p class="dedication">Dành bạn, cả một vườn thương.</p>
-      <p class="date"><span>20 / 10</span>Ngày Phụ nữ Việt Nam</p>
     </header>
     <canvas id="flowers" aria-hidden="true"></canvas>
     <button class="flower-button" id="bloom" type="button" aria-label="Chạm để cả vườn hoa nở" aria-describedby="introHint"></button>
@@ -176,7 +175,6 @@
     <dialog id="wishCard" aria-labelledby="cardTitle">
       <article class="letter">
         <button class="close-card" id="closeCard" type="button" aria-label="Đóng thiệp">×</button>
-        <p class="letter-date">20<span aria-hidden="true"></span>10</p>
         <svg class="letter-sprig" viewBox="0 0 90 64" fill="none" aria-hidden="true">
           <path d="M45 59 Q41 40 46 21 M44 49 Q25 47 23 35 Q39 33 44 49 M44 40 Q60 39 65 28 Q51 28 44 40" stroke="#78947a" stroke-width="1.2" fill="#dfe9d9"/>
           <g fill="#ecc1d2" stroke="#c9789a" stroke-width=".6">
@@ -191,13 +189,13 @@
           <h2 id="cardTitle">Mong những điều đẹp đẽ<br>luôn nở bên bạn.</h2>
           <div id="cardMessage">
             <p class="message">Một bông hoa có thể làm một ngày thêm đẹp.<br>Còn bạn, làm thế giới này dịu dàng hơn.</p>
-            <p class="message">Nhân ngày 20/10, chúc bạn luôn được yêu thương, trân trọng và có thật nhiều niềm vui. Mong bạn đủ bình yên để tận hưởng những điều nhỏ bé, đủ tự tin để theo đuổi những điều mình yêu.</p>
+            <p class="message">Chúc bạn luôn được yêu thương, trân trọng và có thật nhiều niềm vui. Mong bạn đủ bình yên để tận hưởng những điều nhỏ bé, đủ tự tin để theo đuổi những điều mình yêu.</p>
             <p class="message">Hôm nay và cả những ngày sau,<br>hãy cứ rạng rỡ theo cách của riêng mình nhé.</p>
           </div>
           <p class="signature" id="cardSignature">Gửi bạn thật nhiều thương mến ♡</p>
           <div class="letter-actions">
             <button class="view-garden" id="viewGarden" type="button" autofocus>Ngắm vườn hoa</button>
-            <button class="view-garden" id="editCard" type="button">Viết lời chúc riêng</button>
+            <!-- <button class="view-garden" id="editCard" type="button">Viết lời chúc riêng</button> -->
           </div>
         </div>
         <form class="card-editor" id="cardEditor" hidden>
@@ -206,7 +204,7 @@
           <input id="recipientInput" name="recipient" maxlength="60" required autocomplete="off">
           <label for="titleInput">Tiêu đề thiệp</label>
           <textarea id="titleInput" name="title" rows="2" maxlength="160" required></textarea>
-          <label for="messageInput">Lời chúc 20/10</label>
+          <label for="messageInput">Lời chúc</label>
           <textarea id="messageInput" name="message" rows="7" maxlength="3000" required></textarea>
           <label for="signatureInput">Chữ ký</label>
           <input id="signatureInput" name="signature" maxlength="120" required autocomplete="off">
@@ -219,7 +217,7 @@
         <p class="card-status" id="cardStatus" role="status" aria-live="polite"></p>
       </article>
     </dialog>
-    <noscript><p class="noscript">Bật JavaScript để chạm vào hoa và mở thiệp nhé.<br>Chúc bạn ngày 20/10 bình an, rạng rỡ và tràn đầy yêu thương!</p></noscript>
+    <noscript><p class="noscript">Bật JavaScript để chạm vào hoa và mở thiệp nhé.<br>Chúc bạn luôn bình an, rạng rỡ và tràn đầy yêu thương!</p></noscript>
   </main>
   <script src="./garden-botany.js"></script>
   <script src="./garden-card.js"></script>

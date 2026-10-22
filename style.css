@@ -70,7 +70,7 @@ main::before {
 .occasion span { margin-left: 10px; color: var(--ink); font-weight: 600; }
 h1, h2, .letter-recipient { font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif; font-weight: 400; }
 h1 { margin: 0; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.08; letter-spacing: -1.3px; }
-.greeting-caption { font-size: 14px; color: var(--muted); margin: 10px 0 0; }
+.greeting-caption { font-size: 14px; line-height: 1.6; color: var(--muted); margin: 10px 0 0; }
 .bouquet-composition {
   position: relative; min-width: 0; margin: -12px auto -8px;
   width: min(100%, var(--bouquet-size));

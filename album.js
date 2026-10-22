@@ -18,7 +18,7 @@
     edit.setAttribute('aria-expanded', String(open));
     edit.textContent = open ? 'Xong' : 'Thay ảnh ✎';
   }
-  edit.addEventListener('click', () => setEditing(!editing));
+  edit?.addEventListener('click', () => setEditing(!editing));
   toggle.addEventListener('click', () => {
     if (editing && !album.classList.contains('is-spread')) setEditing(false);
   });
@@ -106,16 +106,17 @@
       change.focus({ preventScroll: true });
     });
 
-    try {
-      const saved = localStorage.getItem(key);
-      if (!saved || !saved.startsWith('data:image/jpeg;base64,')) return;
-      const image = new Image();
-      image.src = saved;
-      await image.decode();
-      photo.src = saved;
-      reset.disabled = false;
-    } catch {
-      // Leave the original photo in place when storage is blocked or the saved image is invalid.
-    }
+    // Tạm tắt ảnh tùy chỉnh đã lưu.
+    // try {
+    //   const saved = localStorage.getItem(key);
+    //   if (!saved || !saved.startsWith('data:image/jpeg;base64,')) return;
+    //   const image = new Image();
+    //   image.src = saved;
+    //   await image.decode();
+    //   photo.src = saved;
+    //   reset.disabled = false;
+    // } catch {
+    //   // Leave the original photo in place when storage is blocked or the saved image is invalid.
+    // }
   }));
 })();

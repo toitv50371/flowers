@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#fff8fa">
-  <meta name="description" content="Một bó hoa và tấm thiệp nhỏ, gửi những lời chúc dịu dàng nhân ngày Phụ nữ Việt Nam 20/10.">
-  <title>Một bó hoa dành tặng bạn · 20/10</title>
+  <meta name="description" content="Một bó hoa và tấm thiệp nhỏ, gửi những lời chúc dịu dàng.">
+  <title>Một bó hoa dành tặng bạn</title>
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
   <script src="./card.js" defer></script>
@@ -16,13 +16,18 @@
     <a class="garden-link" href="./garden.html">Ngắm vườn hoa <span aria-hidden="true">❀</span></a>
     <canvas id="ambientPetalsCanvas" aria-hidden="true"></canvas>
     <header class="greeting">
-      <p class="occasion">Ngày Phụ nữ Việt Nam <span>20/10</span></p>
-      <h1>Một bó hoa nhỏ,<br>gửi ngàn yêu thương.</h1>
-      <p class="greeting-caption">Mong hôm nay của bạn thật dịu dàng.</p>
+      <p class="occasion">Gửi em – người con gái anh yêu thương nhất, <span>Rô</span></p>
+      <h1>Một bó hoa nhỏ,<br>gửi ngàn yêu thương đến bé mèo của anh ♥</h1>
+      <p class="greeting-caption">
+        Có những lúc anh vô tình làm em buồn, làm em dỗi, em giận anh,...<br>
+        nhưng điều đó chưa bao giờ làm anh bớt yêu em.<br>
+        Vì với anh, em là để “thờ, thờ ương thương” ♥
+      </p>
+      <p class="greeting-caption">Mong mỗi ngày của bé mèo thật bình yên và ngập tràn niềm vui.</p>
     </header>
 
     <div class="gift-layout">
-      <section class="scene-column" aria-label="Hoa và những lời chúc 20/10">
+      <section class="scene-column" aria-label="Hoa và những lời chúc">
 
 
         <div class="gift-visuals">
@@ -52,21 +57,20 @@
         <div class="letter-paper">
           <button class="close-button" id="closeCard" type="button" aria-label="Đóng thiệp">×</button>
           <div id="cardReading">
-            <div class="letter-date" aria-label="Ngày 20 tháng 10"><span>20</span><span class="date-stem" aria-hidden="true"></span><span>10</span></div>
             <p class="letter-recipient">Gửi <span id="cardRecipient">bạn</span>,</p>
             <h2 id="cardTitle">Chúc bạn một ngày<br>thật nhiều yêu thương.</h2>
             <div class="letter-flower" aria-hidden="true">❀</div>
             <p id="cardMessage" class="letter-message"></p>
             <div class="letter-signoff"><p>Với thật nhiều thương mến,</p><p id="cardSender" class="letter-signature"></p></div>
             <div class="letter-fold" aria-hidden="true"></div>
-            <div class="letter-actions"><button id="viewAlbum" class="text-button" type="button" aria-controls="memoryAlbum">Xem album kỷ niệm <span aria-hidden="true">♡</span></button><button id="editCard" class="text-button" type="button">Viết lời chúc riêng <span aria-hidden="true">✎</span></button></div>
+            <div class="letter-actions"><button id="viewAlbum" class="text-button" type="button" aria-controls="memoryAlbum">Xem album kỷ niệm <span aria-hidden="true">♡</span></button><!-- <button id="editCard" class="text-button" type="button">Viết lời chúc riêng <span aria-hidden="true">✎</span></button> --></div>
           </div>
           <form id="cardEditor" hidden>
             <p class="editor-intro">Một tấm thiệp mang lời của bạn.</p>
             <h2 id="editorTitle" class="editor-title">Viết chút yêu thương</h2>
             <label for="recipientInput">Gửi đến</label>
             <input id="recipientInput" name="recipient" maxlength="60" required autocomplete="off">
-            <label for="messageInput">Lời chúc 20/10</label>
+            <label for="messageInput">Lời chúc</label>
             <textarea id="messageInput" name="message" rows="7" maxlength="1500" required></textarea>
             <label for="senderInput">Người gửi</label>
             <input id="senderInput" name="sender" maxlength="60" required autocomplete="off">
@@ -82,9 +86,9 @@
         <p class="album-note">Một chút kỷ niệm, dành riêng cho bạn</p>
         <h2 id="albumTitle">Những khoảnh khắc thương yêu</h2>
         <button id="toggleAlbum" class="text-button" type="button" aria-expanded="false" aria-controls="albumPhotos">Xòe album <span aria-hidden="true">♡</span></button>
-        <button id="editAlbum" class="text-button" type="button" aria-expanded="false" aria-controls="albumPhotos">Thay ảnh <span aria-hidden="true">✎</span></button>
+        <!-- <button id="editAlbum" class="text-button" type="button" aria-expanded="false" aria-controls="albumPhotos">Thay ảnh <span aria-hidden="true">✎</span></button> -->
       </header>
-      <p id="albumEditHint" class="album-edit-hint" hidden>Chọn ảnh từ thiết bị của bạn, tối đa 20 MB mỗi ảnh. Ảnh được lưu trên trình duyệt này, không tự gửi sang thiết bị khác.</p>
+      <!-- <p id="albumEditHint" class="album-edit-hint" hidden>Chọn ảnh từ thiết bị của bạn, tối đa 20 MB mỗi ảnh. Ảnh được lưu trên trình duyệt này, không tự gửi sang thiết bị khác.</p> -->
       <p id="albumStatus" class="album-status" role="status" aria-live="polite" aria-atomic="true"></p>
       <div id="albumPhotos" class="album-photos">
         <figure class="portrait-card album-card">
@@ -117,7 +121,7 @@
       </div>
       <p class="album-footnote">Có những điều nhỏ, nhớ lại vẫn thấy vui.</p>
     </section>
-    <noscript><p class="noscript-message">Bật JavaScript để ngắm hoa nở và mở thiệp 20/10 nhé.</p></noscript>
+    <noscript><p class="noscript-message">Bật JavaScript để ngắm hoa nở và mở thiệp nhé.</p></noscript>
   </main>
 </body>
 </html>

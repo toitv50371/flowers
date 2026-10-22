@@ -3,9 +3,9 @@
 
   const STORAGE_KEY = 'flower.greeting.20-10.v1';
   const defaultGreeting = {
-    recipient: 'bạn',
-    message: 'Chúc bạn luôn khỏe mạnh, bình an và có thật nhiều niềm vui.\n\nMong bạn được yêu thương từ những điều nhỏ nhất, có thời gian cho bản thân và tự tin theo đuổi những điều mình mong muốn.\n\nHôm nay và cả những ngày sau, hãy luôn mỉm cười theo cách của riêng bạn nhé.',
-    sender: 'Một người quý mến bạn'
+    recipient: 'bé mèo',
+    message: 'Chúc bé mèo luôn khỏe mạnh, bình an và có thật nhiều niềm vui.\n\nMong bé mèo được yêu thương từ những điều nhỏ nhất, có thời gian cho bản thân và tự tin theo đuổi những điều mình mong muốn.\n\nHôm nay và cả những ngày sau, hãy luôn mỉm cười theo cách của riêng bé mèo nhé.',
+    sender: 'Một người quý mến bé mèo'
   };
   const dialog = document.getElementById('greetingCard');
   const openButton = document.getElementById('openCard');

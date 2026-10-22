@@ -138,6 +138,7 @@
     @keyframes unfold { from { opacity: 0; transform: translateY(35px) rotate(-2deg) scale(.94); } to { opacity: 1; transform: none; } }
     @media (max-width: 600px) {
       .dedication { font-size: 18px; max-width: 150px; }
+      .garden ~ .music-toggle { bottom: max(84px, calc(env(safe-area-inset-bottom) + 68px)); }
       .date { max-width: 130px; font-size: 10px; }
       .date span { font-size: 25px; }
       .letter { padding: 35px 26px 25px; }
@@ -159,13 +160,13 @@
 <body>
   <main class="garden" id="garden">
     <header class="page-header">
-      <p class="dedication">Dành bạn, cả một vườn thương.</p>
+      <p class="dedication">Dành bé mèo, cả một vườn thương.</p>
     </header>
     <canvas id="flowers" aria-hidden="true"></canvas>
     <button class="flower-button" id="bloom" type="button" aria-label="Chạm để cả vườn hoa nở" aria-describedby="introHint"></button>
     <div class="intro" id="intro">
       <h1>Từ một bông hoa nhỏ…</h1>
-      <p id="introHint">Chạm vào hoa, một điều dịu dàng đang chờ bạn.</p>
+      <p id="introHint">Chạm vào hoa, một điều dịu dàng đang chờ bé mèo.</p>
     </div>
     <p class="progress" id="status" role="status" aria-live="polite" aria-atomic="true"></p>
     <nav class="garden-actions" id="actions" aria-label="Vườn hoa và thiệp" hidden>
@@ -185,14 +186,14 @@
           </g>
         </svg>
         <div id="cardReading">
-          <p class="recipient">Gửi <span id="cardRecipient">bạn thương mến</span>,</p>
-          <h2 id="cardTitle">Mong những điều đẹp đẽ<br>luôn nở bên bạn.</h2>
+          <p class="recipient">Gửi <span id="cardRecipient">bé mèo thương mến</span>,</p>
+          <h2 id="cardTitle">Mong những điều đẹp đẽ<br>luôn nở bên bé mèo.</h2>
           <div id="cardMessage">
-            <p class="message">Một bông hoa có thể làm một ngày thêm đẹp.<br>Còn bạn, làm thế giới này dịu dàng hơn.</p>
-            <p class="message">Chúc bạn luôn được yêu thương, trân trọng và có thật nhiều niềm vui. Mong bạn đủ bình yên để tận hưởng những điều nhỏ bé, đủ tự tin để theo đuổi những điều mình yêu.</p>
+            <p class="message">Một bông hoa có thể làm một ngày thêm đẹp.<br>Còn bé mèo, làm thế giới này dịu dàng hơn.</p>
+            <p class="message">Chúc bé mèo luôn được yêu thương, trân trọng và có thật nhiều niềm vui. Mong bé mèo đủ bình yên để tận hưởng những điều nhỏ bé, đủ tự tin để theo đuổi những điều mình yêu.</p>
             <p class="message">Hôm nay và cả những ngày sau,<br>hãy cứ rạng rỡ theo cách của riêng mình nhé.</p>
           </div>
-          <p class="signature" id="cardSignature">Gửi bạn thật nhiều thương mến ♡</p>
+          <p class="signature" id="cardSignature">Gửi bé mèo thật nhiều thương mến ♡</p>
           <div class="letter-actions">
             <button class="view-garden" id="viewGarden" type="button" autofocus>Ngắm vườn hoa</button>
             <!-- <button class="view-garden" id="editCard" type="button">Viết lời chúc riêng</button> -->
@@ -217,10 +218,11 @@
         <p class="card-status" id="cardStatus" role="status" aria-live="polite"></p>
       </article>
     </dialog>
-    <noscript><p class="noscript">Bật JavaScript để chạm vào hoa và mở thiệp nhé.<br>Chúc bạn luôn bình an, rạng rỡ và tràn đầy yêu thương!</p></noscript>
+    <noscript><p class="noscript">Bật JavaScript để chạm vào hoa và mở thiệp nhé.<br>Chúc bé mèo luôn bình an, rạng rỡ và tràn đầy yêu thương!</p></noscript>
   </main>
   <script src="./garden-botany.js"></script>
   <script src="./garden-card.js"></script>
+  <script src="./music.js?v=3"></script>
   <script>
     (() => {
       'use strict';
@@ -468,7 +470,7 @@
       }
       function finish() {
         state = 'ready'; garden.classList.add('is-ready'); actions.hidden = false;
-        status.textContent = 'Cả vườn hoa đã nở. Một tấm thiệp dành tặng bạn.';
+        status.textContent = 'Cả vườn hoa đã nở. Một tấm thiệp dành tặng bé mèo.';
         openCard();
       }
       function draw(time) {

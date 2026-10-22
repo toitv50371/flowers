@@ -66,16 +66,16 @@ const ROSE_PALETTES = {
 };
 
 /**
- * Friendly, cheerful, non-cheesy wishes displayed when roses bloom
+ * Lời thì thầm gửi người yêu, hiện khi từng bông hồng nở
  */
 const WHISPER_NOTES = [
-  'Chúc bé mèo một ngày ngập tràn yêu thương và những bất ngờ nho nhỏ.',
-  'Mong bé mèo luôn được lắng nghe, trân trọng và yêu thương theo cách mình xứng đáng.',
-  'Chúc bé mèo đủ bình yên để nghỉ ngơi, đủ tự tin để theo đuổi điều mình thích.',
-  'Một bông hoa dành cho nụ cười của bé mèo. Hôm nay nhớ vui thật nhiều nhé!',
-  'Chúc những dự định của bé mèo sớm đơm hoa, từng chút một, theo nhịp của riêng mình.',
-  'Mong mỗi ngày của bé mèo đều có một lý do thật nhỏ để mỉm cười.',
-  'Chúc bé mèo luôn khỏe mạnh, an yên và có thật nhiều thời gian cho chính mình.'
+  'Hôm nay em đã cười chưa? Chỉ cần em vui là anh vui rồi.',
+  'Bông này anh gửi để xin lỗi những lần làm em dỗi nhé.',
+  'Anh thương yêu em nhiều hơn những gì anh nói ra được.',
+  'Mong bé mèo ăn ngon, ngủ ngoan và không phải lo nghĩ gì nhiều.',
+  'Ở cạnh em, ngày nào với anh cũng là một ngày đẹp.',
+  'Mệt thì cứ dựa vào anh, có anh ở đây rồi.',
+  'Cảm ơn em vì đã chọn anh. Anh sẽ thương yêu em thật lâu.'
 ];
 
 /**

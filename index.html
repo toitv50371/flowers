@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#fff8fa">
-  <meta name="description" content="Một bó hoa và tấm thiệp nhỏ, gửi những lời chúc dịu dàng.">
-  <title>Một bó hoa dành tặng bé mèo</title>
+  <meta name="description" content="Một bó hoa, một tấm thiệp và chút kỷ niệm anh gửi riêng cho em.">
+  <title>Anh gửi bé mèo một bó hoa ♥</title>
   <link rel="stylesheet" href="./style.css">
-  <script src="./script.js?v=2" defer></script>
-  <script src="./card.js" defer></script>
+  <script src="./script.js?v=3" defer></script>
+  <script src="./card.js?v=2" defer></script>
   <script src="./album.js" defer></script>
   <script src="./music.js?v=3" defer></script>
 </head>
@@ -17,11 +17,11 @@
     <a class="garden-link" href="./garden.html">Ngắm vườn hoa <span aria-hidden="true">❀</span></a>
     <canvas id="ambientPetalsCanvas" aria-hidden="true"></canvas>
     <header class="greeting">
-      <p class="occasion">Gửi em – người con gái anh yêu thương nhất, <span>Rô</span></p>
+      <p class="occasion">Gửi em – người con gái anh yêu thương nhất,<span>Rô</span></p>
       <h1>Một bó hoa nhỏ,<br>gửi ngàn yêu thương đến bé mèo ♥</h1>
       <p class="greeting-caption">
-        Có những lúc anh vô tình làm em buồn, làm em dỗi, em giận anh,...<br>
-        nhưng điều đó chưa bao giờ làm anh bớt yêu em.<br>
+        Có những lúc anh làm em buồn, làm em dỗi, em giận anh,...<br>
+        nhưng điều đó chưa bao giờ làm anh bớt thương và yêu em.<br>
         Vì với anh, em là để “thờ, thờ ương thương” ♥
       </p>
       <p class="greeting-caption">Mong mỗi ngày của bé mèo thật bình yên và ngập tràn niềm vui.</p>
@@ -39,8 +39,8 @@
               <canvas id="bouquetCanvas" aria-hidden="true"></canvas>
             </div>
             <button class="envelope-button" id="openCard" type="button" aria-haspopup="dialog" aria-controls="greetingCard" aria-expanded="false" hidden>
-              <span class="envelope" aria-hidden="true"><span class="envelope-letter">Gửi bé mèo</span><span class="envelope-seal">♡</span></span>
-              <span class="envelope-caption">Có một tấm thiệp cho bé mèo</span>
+              <span class="envelope" aria-hidden="true"><span class="envelope-letter">Gửi em,</span><span class="envelope-seal">♡</span></span>
+              <span class="envelope-caption">Anh có đôi lời muốn gửi em</span>
               <span class="envelope-action">Mở thiệp</span>
             </button>
           </div>
@@ -48,7 +48,7 @@
         </div>
 
         <footer class="scene-footer">
-          <p id="bouquetHint" class="bouquet-hint">Chạm một bông hoa để nhận lời chúc</p>
+          <p id="bouquetHint" class="bouquet-hint">Chạm vào từng bông hoa, anh có lời muốn nói</p>
           <p id="roseWish" class="rose-wish" role="status" aria-live="polite" aria-atomic="true"></p>
           <button class="text-button" id="replayBloom" type="button">Cho hoa nở lại <span aria-hidden="true">↻</span></button>
         </footer>
@@ -59,10 +59,10 @@
           <button class="close-button" id="closeCard" type="button" aria-label="Đóng thiệp">×</button>
           <div id="cardReading">
             <p class="letter-recipient">Gửi <span id="cardRecipient">bé mèo</span>,</p>
-            <h2 id="cardTitle">Chúc bé mỗi ngày<br>thật nhiều yêu thương.</h2>
+            <h2 id="cardTitle">Yêu thương em, hôm nay<br>và cả những ngày sau.</h2>
             <div class="letter-flower" aria-hidden="true">❀</div>
             <p id="cardMessage" class="letter-message"></p>
-            <div class="letter-signoff"><p>Với thật nhiều thương mến,</p><p id="cardSender" class="letter-signature"></p></div>
+            <div class="letter-signoff"><p>Yêu thương em rất nhiều,</p><p id="cardSender" class="letter-signature"></p></div>
             <div class="letter-fold" aria-hidden="true"></div>
             <div class="letter-actions"><button id="viewAlbum" class="text-button" type="button" aria-controls="memoryAlbum">Xem album kỷ niệm <span aria-hidden="true">♡</span></button><!-- <button id="editCard" class="text-button" type="button">Viết lời chúc riêng <span aria-hidden="true">✎</span></button> --></div>
           </div>
@@ -84,8 +84,8 @@
     </div>
     <section id="memoryAlbum" class="memory-album" aria-labelledby="albumTitle" hidden>
       <header class="album-heading">
-        <p class="album-note">Một chút kỷ niệm, dành riêng cho bé mèo</p>
-        <h2 id="albumTitle">Những khoảnh khắc thương yêu</h2>
+        <p class="album-note">Những ngày có em, anh đều muốn giữ lại</p>
+        <h2 id="albumTitle">Chuyện của chúng mình</h2>
         <button id="toggleAlbum" class="text-button" type="button" aria-expanded="false" aria-controls="albumPhotos">Xòe album <span aria-hidden="true">♡</span></button>
         <!-- <button id="editAlbum" class="text-button" type="button" aria-expanded="false" aria-controls="albumPhotos">Thay ảnh <span aria-hidden="true">✎</span></button> -->
       </header>
@@ -94,7 +94,7 @@
       <div id="albumPhotos" class="album-photos">
         <figure class="portrait-card album-card">
           <div class="portrait-photo"><img src="./assets/images/album/2.jpg" alt="Ảnh kỷ niệm thứ nhất của bé mèo" width="720" height="1280" decoding="async"></div>
-          <figcaption><span class="portrait-dedication">Một nụ cười rất thương.</span><span class="portrait-date">Những ngày thật vui</span></figcaption>
+          <figcaption><span class="portrait-dedication">Dỗi một chút cũng xinh.</span><span class="portrait-date">Anh nhìn mãi không chán</span></figcaption>
           <div class="photo-actions" hidden>
             <button class="text-button change-photo" type="button" aria-label="Đổi ảnh thứ nhất">Đổi ảnh</button>
             <button class="text-button reset-photo" type="button" aria-label="Khôi phục ảnh thứ nhất" disabled>Ảnh ban đầu</button>
@@ -103,7 +103,7 @@
         </figure>
         <figure class="portrait-card album-card">
           <div class="portrait-photo"><img src="./assets/images/album/1.jpg" alt="Ảnh kỷ niệm thứ hai của bé mèo" width="720" height="1280" decoding="async" loading="lazy"></div>
-          <figcaption><span class="portrait-dedication">Bình yên từ điều nhỏ.</span><span class="portrait-date">Một khoảnh khắc dịu dàng</span></figcaption>
+          <figcaption><span class="portrait-dedication">Nụ cười anh thương yêu nhất.</span><span class="portrait-date">Cười nhiều thế này em nhé</span></figcaption>
           <div class="photo-actions" hidden>
             <button class="text-button change-photo" type="button" aria-label="Đổi ảnh thứ hai">Đổi ảnh</button>
             <button class="text-button reset-photo" type="button" aria-label="Khôi phục ảnh thứ hai" disabled>Ảnh ban đầu</button>
@@ -112,7 +112,7 @@
         </figure>
         <figure class="portrait-card album-card">
           <div class="portrait-photo"><img src="./assets/images/album/3.jpg" alt="Ảnh kỷ niệm thứ ba của bé mèo" width="720" height="960" decoding="async" loading="lazy"></div>
-          <figcaption><span class="portrait-dedication">Bé mèo của anh.</span><span class="portrait-date">Đáng yêu mỗi ngày</span></figcaption>
+          <figcaption><span class="portrait-dedication">Bé mèo của anh.</span><span class="portrait-date">Đáng yêu từng ngày một</span></figcaption>
           <div class="photo-actions" hidden>
             <button class="text-button change-photo" type="button" aria-label="Đổi ảnh thứ ba">Đổi ảnh</button>
             <button class="text-button reset-photo" type="button" aria-label="Khôi phục ảnh thứ ba" disabled>Ảnh ban đầu</button>
@@ -121,7 +121,7 @@
         </figure>
         <figure class="portrait-card album-card">
           <div class="portrait-photo"><img src="./assets/images/album/4.jpg" alt="Ảnh kỷ niệm thứ tư của bé mèo" width="720" height="960" decoding="async" loading="lazy"></div>
-          <figcaption><span class="portrait-dedication">Mong bé mèo luôn rạng rỡ.</span><span class="portrait-date">Hôm nay và cả mai sau</span></figcaption>
+          <figcaption><span class="portrait-dedication">Ôm gấu thôi, đừng ôm buồn.</span><span class="portrait-date">Còn có anh ôm em nữa</span></figcaption>
           <div class="photo-actions" hidden>
             <button class="text-button change-photo" type="button" aria-label="Đổi ảnh thứ tư">Đổi ảnh</button>
             <button class="text-button reset-photo" type="button" aria-label="Khôi phục ảnh thứ tư" disabled>Ảnh ban đầu</button>
@@ -130,7 +130,7 @@
         </figure>
         <figure class="portrait-card album-card">
           <div class="portrait-photo"><img src="./assets/images/album/5.jpg" alt="Ảnh kỷ niệm thứ năm của bé mèo" width="720" height="960" decoding="async" loading="lazy"></div>
-          <figcaption><span class="portrait-dedication">Thương em nhiều lắm.</span><span class="portrait-date">Từng chút một</span></figcaption>
+          <figcaption><span class="portrait-dedication">Hoa đẹp, em đẹp hơn.</span><span class="portrait-date">Yêu thương em nhiều lắm</span></figcaption>
           <div class="photo-actions" hidden>
             <button class="text-button change-photo" type="button" aria-label="Đổi ảnh thứ năm">Đổi ảnh</button>
             <button class="text-button reset-photo" type="button" aria-label="Khôi phục ảnh thứ năm" disabled>Ảnh ban đầu</button>
@@ -139,7 +139,7 @@
         </figure>
         <figure class="portrait-card album-card">
           <div class="portrait-photo"><img src="./assets/images/album/6.jpg" alt="Ảnh kỷ niệm thứ sáu của bé mèo" width="720" height="960" decoding="async" loading="lazy"></div>
-          <figcaption><span class="portrait-dedication">Ở cạnh em là đủ.</span><span class="portrait-date">Những ngày có nhau</span></figcaption>
+          <figcaption><span class="portrait-dedication">Hai cái bóng, một đường về.</span><span class="portrait-date">Mình cứ đi cùng nhau mãi nhé</span></figcaption>
           <div class="photo-actions" hidden>
             <button class="text-button change-photo" type="button" aria-label="Đổi ảnh thứ sáu">Đổi ảnh</button>
             <button class="text-button reset-photo" type="button" aria-label="Khôi phục ảnh thứ sáu" disabled>Ảnh ban đầu</button>
@@ -147,9 +147,9 @@
           </div>
         </figure>
       </div>
-      <p class="album-footnote">Có những điều nhỏ, nhớ lại vẫn thấy vui.</p>
+      <p class="album-footnote">Còn nhiều ảnh lắm, mình cùng chụp tiếp em nhé.</p>
     </section>
-    <noscript><p class="noscript-message">Bật JavaScript để ngắm hoa nở và mở thiệp nhé.</p></noscript>
+    <noscript><p class="noscript-message">Bật JavaScript để ngắm hoa nở và mở thiệp anh gửi em nhé.</p></noscript>
   </main>
 </body>
 </html>

@@ -930,7 +930,7 @@ function drawWrappingPaperFrontAndRibbon(ctx, cx, cy, scale, time) {
   ctx.roundRect(-13, -12, 26, 24, 9);
   ctx.fill();
 
-  // 6. Cute Swinging Florist Keepsake Tag ("20 • 10")
+  // 6. Cute Swinging Florist Keepsake Tag ("Rô ♥")
   const tagAngle = Math.sin(time * 2.1) * 0.08 + 0.12;
   ctx.save();
   ctx.rotate(tagAngle);
@@ -954,9 +954,9 @@ function drawWrappingPaperFrontAndRibbon(ctx, cx, cy, scale, time) {
   ctx.stroke();
 
   ctx.fillStyle = '#B83B5E';
-  ctx.font = 'italic 600 10px Georgia, serif';
+  ctx.font = 'italic 600 11px "Palatino Linotype", "Book Antiqua", Georgia, serif';
   ctx.textAlign = 'center';
-  ctx.fillText('20 • 10', 0, 16);
+  ctx.fillText('Rô ♥', 0, 17);
   ctx.restore();
 
   ctx.restore(); // end ribbon waist

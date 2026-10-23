@@ -41,6 +41,9 @@
     .music-toggle:not(.is-playing) .icon-off { display: block; opacity: .7; }
     .music-toggle.is-playing .wave { animation: music-wave 1.6s ease-in-out infinite; }
     .music-toggle.is-playing .wave-2 { animation-delay: .3s; }
+    /* Khi trang có hàng nút ở góc trên, nút nhạc đứng cạnh các nút đó thay vì nổi ở góc dưới. */
+    .music-toggle.in-bar { position: relative; left: auto; bottom: auto; flex: none; width: 32px; height: 32px; box-shadow: 0 2px 10px #b4577c1a; }
+    .music-toggle.in-bar svg { width: 17px; height: 17px; }
     @keyframes music-wave { 50% { opacity: .35; } }
     @media (prefers-reduced-motion: reduce) { .music-toggle.is-playing .wave { animation: none; } }
   `;
@@ -104,7 +107,13 @@
     store.set(sessionStorage, TIME_KEY, String(audio.currentTime));
   });
 
-  document.body.append(button);
+  const bar = document.querySelector('.top-actions');
+  if (bar) {
+    button.classList.add('in-bar');
+    bar.prepend(button);
+  } else {
+    document.body.append(button);
+  }
   render();
 
   if (enabled) {

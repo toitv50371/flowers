@@ -63,9 +63,12 @@
       pointer-events: none;
     }
     .dedication { margin: 0; font: italic 20px/1.6 var(--font-letter); }
-    .home-link {
+    .top-actions {
       position: absolute; z-index: 3;
       top: max(26px, env(safe-area-inset-top)); right: clamp(20px, 5vw, 76px);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .home-link {
       display: inline-flex; align-items: center; gap: 5px;
       min-height: 30px; padding: 6px 12px 6px 10px; border-radius: 999px;
       background: #ffffff8c; color: var(--ink);
@@ -154,8 +157,8 @@
     @keyframes unfold { from { opacity: 0; transform: translateY(35px) rotate(-2deg) scale(.94); } to { opacity: 1; transform: none; } }
     @media (max-width: 600px) {
       .dedication { font-size: 18px; max-width: 150px; }
-      .home-link { top: max(24px, env(safe-area-inset-top)); right: 16px; padding: 6px 11px 6px 9px; font-size: 12px; }
-      .garden ~ .music-toggle { bottom: max(84px, calc(env(safe-area-inset-bottom) + 68px)); }
+      .top-actions { top: max(24px, env(safe-area-inset-top)); right: 16px; }
+      .home-link { padding: 6px 11px 6px 9px; font-size: 12px; }
       .date { max-width: 130px; font-size: 10px; }
       .date span { font-size: 25px; }
       .letter { padding: 35px 26px 25px; }
@@ -179,7 +182,9 @@
     <header class="page-header">
       <p class="dedication">Dành tặng em, cả một vườn thương yêu.</p>
     </header>
-    <a class="home-link" href="./index.html"><span aria-hidden="true">❀</span>Về bó hoa</a>
+    <div class="top-actions">
+      <a class="home-link" href="./index.html"><span aria-hidden="true">❀</span>Về bó hoa</a>
+    </div>
     <canvas id="flowers" aria-hidden="true"></canvas>
     <button class="flower-button" id="bloom" type="button" aria-label="Chạm để cả vườn hoa nở" aria-describedby="introHint"></button>
     <div class="intro" id="intro">
@@ -240,7 +245,7 @@
   </main>
   <script src="./garden-botany.js"></script>
   <script src="./garden-card.js"></script>
-  <script src="./music.js?v=4"></script>
+  <script src="./music.js?v=5"></script>
   <script>
     (() => {
       'use strict';

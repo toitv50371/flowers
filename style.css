@@ -31,12 +31,12 @@ main {
 .garden-link {
   position: absolute; top: max(14px, env(safe-area-inset-top));
   right: max(16px, env(safe-area-inset-right)); z-index: 4;
-  display: inline-flex; align-items: center; gap: 8px;
-  min-height: 44px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 24px;
-  background: var(--paper); color: var(--ink); font-size: 13px; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 5px;
+  min-height: 30px; padding: 5px 11px; border: 1px solid var(--line); border-radius: 24px;
+  background: var(--paper); color: var(--ink); font-size: 12px; line-height: 1; text-decoration: none;
 }
 .garden-link:hover { background: #fae7ef; }
-.garden-link span { color: var(--rose); font-size: 20px; line-height: 1; }
+.garden-link span { color: var(--rose); font-size: 14px; line-height: 1; }
 .gift-layout {
   width: min(100%, 1040px); margin-inline: auto;
   display: grid; grid-template-columns: minmax(0, 1fr); align-items: start;
@@ -67,7 +67,7 @@ main::before {
 }
 .greeting { width: fit-content; max-width: 100%; margin: 0 auto 8px; transform-origin: top left; position: relative; z-index: 1; text-align: center; }
 .occasion { margin: 0 0 10px; font-size: 13px; color: var(--muted); }
-.occasion span { margin-left: 10px; color: var(--ink); font-weight: 600; }
+.occasion span { margin-left: 2px; color: var(--ink); font-weight: 600; }
 h1, h2, .letter-recipient { font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif; font-weight: 400; }
 h1 { margin: 0; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.08; letter-spacing: -1.3px; }
 .greeting-caption { font-size: 14px; line-height: 1.6; color: var(--muted); margin: 10px 0 0; }
@@ -121,14 +121,14 @@ h1 { margin: 0; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.08; letter-s
   .envelope-button:hover .envelope-letter { transform: translateY(-7px); }
   .envelope-button:hover .envelope::after { transform: rotateX(35deg); }
 }
-.scene-footer { transform-origin: top left; width: min(100%, 540px); margin-top: 6px; text-align: center; position: relative; z-index: 1; }
+.scene-footer { transform-origin: top left; width: min(100%, 540px); margin-top: 15px; text-align: center; position: relative; z-index: 1; }
 .bouquet-hint { font-size: 12px; color: var(--muted); margin: 0; }
 .rose-wish { font: italic 17px/1.6 Georgia, serif; margin: 6px auto 2px; max-width: 440px; min-height: 54px; text-wrap: pretty; }
 .rose-wish:empty { min-height: 0; margin: 0; }
 .rose-wish.is-new { animation: wish-arrival .4s ease both; }
 .text-button { border: 0; background: transparent; padding: 12px 8px; font-size: 12px; text-decoration: underline; text-underline-offset: 4px; }
 .text-button span { display: inline-block; margin-left: 4px; text-decoration: none; }
-#replayBloom { margin-top: 3px; }
+/* #replayBloom { margin-top: 3px; } */
 #ambientPetalsCanvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; z-index: 2; }
 .card-dialog {
   position: relative; z-index: 3; inset: auto; justify-self: center; align-self: start;
